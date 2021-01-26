@@ -64,6 +64,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-PAT-password" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/01/26/PAT-password/" class="article-date">
+  <time datetime="2021-01-26T08:24:16.000Z" itemprop="datePublished">2021-01-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/26/PAT-password/">PAT-password</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1035-这种题的格式不是10年逆天想不出来的-主要是java的nextInt和nextLine有点问题，要注意"><a href="#1035-这种题的格式不是10年逆天想不出来的-主要是java的nextInt和nextLine有点问题，要注意" class="headerlink" title="1035  这种题的格式不是10年逆天想不出来的 主要是java的nextInt和nextLine有点问题，要注意"></a>1035  这种题的格式不是10年逆天想不出来的 主要是java的nextInt和nextLine有点问题，要注意</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> len = in.nextInt();</span><br><span class="line">        in.nextLine();</span><br><span class="line">        String[] s = <span class="keyword">new</span> String[len];</span><br><span class="line">        <span class="keyword">int</span> k =<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">             s[k] = in.nextLine();</span><br><span class="line">            k++;</span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line">        List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">            <span class="keyword">char</span>[] res = s[i].toCharArray();</span><br><span class="line">            <span class="keyword">int</span> tag =<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> b =<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j =<span class="number">0</span>;j&lt;res.length;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(res[j]==<span class="string">' '</span>)&#123;</span><br><span class="line">                    b=<span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(b==<span class="number">0</span>)&#123;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(res[j]==<span class="string">'1'</span>)&#123;</span><br><span class="line">                    res[j]= <span class="string">'@'</span>;</span><br><span class="line">                    tag =<span class="number">1</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(res[j]==<span class="string">'0'</span>)&#123;</span><br><span class="line">                    res[j]=<span class="string">'%'</span>;</span><br><span class="line">                    tag =<span class="number">1</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(res[j]==<span class="string">'l'</span>)&#123;</span><br><span class="line">                    res[j] =<span class="string">'L'</span>;</span><br><span class="line">                    tag  =<span class="number">1</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(res[j]==<span class="string">'O'</span>)&#123;</span><br><span class="line">                    res[j]=<span class="string">'o'</span>;</span><br><span class="line">                    tag =<span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(tag==<span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                list.add(<span class="keyword">new</span> String(res));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(list.size()==<span class="number">0</span>)&#123;</span><br><span class="line">            System.out.println((len&gt;<span class="number">1</span>?<span class="string">"There are "</span>:<span class="string">"There is "</span>)+len+ (len&gt;<span class="number">1</span>?<span class="string">" accounts and no account is modified"</span>:<span class="string">" account and no account is modified"</span>));</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(list.size());</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;list.size();i++)&#123;</span><br><span class="line">            System.out.println(list.get(i));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2021/01/26/PAT-password/" data-id="ckkds2fe40000eovc66k02x9v" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PAT%E4%B9%A0%E9%A2%98%E7%AC%94%E8%AE%B0/" rel="tag">PAT习题笔记</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-PAT-helloWorld-U" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2021/01/26/PAT-helloWorld-U/" class="article-date">
@@ -288,6 +327,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/01/26/PAT-password/">PAT-password</a>
+          </li>
         
           <li>
             <a href="/2021/01/26/PAT-helloWorld-U/">PAT-helloWorld-U</a>
